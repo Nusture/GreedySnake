@@ -1,4 +1,4 @@
-### typescript实现的简易贪吃蛇游戏
+# typescript实现的简易贪吃蛇游戏
 
 
 ## 安装包
