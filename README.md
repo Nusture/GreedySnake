@@ -6,6 +6,6 @@
 ## 安装包
 yarn install
 ## 项目启动
-yarn run dev
+yarn dev
 ## 项目编译
-yarn run build
+yarn build
