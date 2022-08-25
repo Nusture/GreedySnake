@@ -58,7 +58,7 @@ class GameControll {
     }
 
     this.isLive &&
-      setTimeout(this.run.bind(this), 300 - (this.scorePanel.level - 1) * 30);
+      setTimeout(this.run.bind(this), 200 - (this.scorePanel.level - 1) * 20);
   }
 
   checkEat(x: number, y: number) {
