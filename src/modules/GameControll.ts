@@ -8,8 +8,12 @@ class GameControll {
   scorePanel: ScorePanel;
   direction: string = "";
   isLive = true;
+  gameoverEle: HTMLElement;
+  again: HTMLElement;
 
   constructor() {
+    this.gameoverEle = document.getElementById("game-over")!;
+    this.again = document.getElementById("control")!;
     this.sanke = new Snake();
     this.food = new Food();
     this.scorePanel = new ScorePanel();
@@ -17,11 +21,14 @@ class GameControll {
   }
 
   init() {
+    this.again.style.display = "none";
+    this.gameoverEle.style.display = "none";
     document.addEventListener("keydown", this.keyDownHandler.bind(this));
     this.run();
   }
 
   keyDownHandler(e: KeyboardEvent) {
+    e.preventDefault();
     this.direction = e.key;
   }
 
@@ -53,8 +60,10 @@ class GameControll {
       this.sanke.X = x;
       this.sanke.Y = y;
     } catch (error) {
-      alert("Game Over!");
       this.isLive = false;
+      this.again.style.display = "";
+      this.gameoverEle.style.display = "";
+      this.again.addEventListener("click", this.playAgain, false);
     }
 
     this.isLive &&
@@ -67,6 +76,10 @@ class GameControll {
       this.scorePanel.addScore();
       this.sanke.addBody();
     }
+  }
+
+  playAgain() {
+    location.reload();
   }
 }
 export default GameControll;

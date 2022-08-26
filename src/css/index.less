@@ -59,6 +59,17 @@ body{
         transform: rotate(45deg);
       }
     }
+
+    #game-over{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      font-size: 40px;
+      white-space: nowrap;
+      color:red;
+    }
   }
 
   #score-panel{
@@ -67,5 +78,11 @@ body{
     align-items: center;
     justify-content: space-between;
   }
+}
+
+#control{
+  width: 100px;
+  height: 50px;
+  margin: -50px auto;
 }
 
